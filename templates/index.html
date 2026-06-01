@@ -508,6 +508,8 @@ function seekTo(i, a=-1, b=-1) {
     if(a>=0 && b>=0){
         state.loopIndexA = a;
         state.loopIndexB = b;
+        state.setA = a;
+        state.setB = b;
     }
     player.seekTo(subtitles[i].time, true);
     player.playVideo();
@@ -573,6 +575,7 @@ function tick() {
     }
     
     saveSubtitles(true);
+    saveIndex();
 
 }
 
